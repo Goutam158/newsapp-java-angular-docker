@@ -1,0 +1,15 @@
+
+  <nav mat-tab-nav-bar>
+    <a id="#nav-bar" mat-tab-link style="color:black"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+   {{link.label}}
+  </a>
+  <div class="right-align profile-nav">
+    <ul>
+        <li color="blue-text">Welcome User : <span class="username">{{user}}</span></li> <span class="divider">|</span> <a id="#logout-btn" href="#" style="color :red" (click)="logOut()">Log Out</a>
+    </ul>
+</div>
+  </nav>

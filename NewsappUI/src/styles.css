@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+@import '../node_modules/primeng/resources/primeng.min.css';
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  background-color: rgb(236, 238, 238); 
+}
+
+.basic-container {
+  padding: 5px;
+  margin: 1em 0em 0em 0em;
+  background-color: aqua;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.news-card-container{
+  width:90%; 
+  margin:auto;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.news-card{
+  width:300px;
+  margin:10px;
+}
+
+.news-heading{
+  width:89%; 
+  margin:auto;
+}
+/*
+.content-container{
+  
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid #e3e5e6;
+}*/
+
+
+.mat-card-header-text {
+  margin: 0 !important;
+}

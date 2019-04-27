@@ -1,0 +1,35 @@
+
+<mat-card id=".signup-card" class="signup-container">
+  <form class="signup-form">
+      
+      <h1 class="mat-h1" id="text-h1-signup">Signup</h1>
+      <h3 id="text-h3-modal-error-message" class="mat-h3" style="color:red;">{{errorMessage}}</h3>
+      <h3 id="text-h3-modal-success-message" class="mat-h3" style="color:green;">{{message}}</h3>
+  
+      <mat-form-field style="padding:5px;">
+          <input id="#first-name-field" matInput placeholder="First Name" name="signupFirstName" [(ngModel)]="userModel.firstName" (keypress)="onKeyPress()">
+      </mat-form-field>
+  
+      <mat-form-field style="padding:5px;">
+          <input id="#last-name-field" matInput placeholder="Last Name" name="signupLastName" [(ngModel)]="userModel.lastName" (keypress)="onKeyPress()">
+      </mat-form-field>
+   
+      <mat-form-field style="padding:5px;">
+        <input id="#email-field" matInput placeholder="Email" name="signupEmail" [(ngModel)]="userModel.email" (keypress)="onKeyPress()">
+      </mat-form-field>
+  
+      <mat-form-field style="padding:5px;">
+        <input id="#password-field" matInput type="password" placeholder="Password" name="signupPassword"  [(ngModel)]="userModel.password" (keypress)="onKeyPress()">
+      </mat-form-field>
+  
+      <mat-form-field style="padding:5px;">
+          <input id="#retype-password-field" matInput type="password" placeholder="Retype password" name="signupRetypePassword"  [(ngModel)]="userModel.retypePassword" (keypress)="onKeyPress()">
+      </mat-form-field>
+      <div>
+          <button id="#btn-signup" mat-raised-button color="primary" (click)="signup()" style="float: right;">Signup</button>
+          <button id="#btn-clear" mat-raised-button  (click)="clear()" style="float: right; margin-right:5px;">Clear</button>
+          <button id="#btn-goto-login" mat-raised-button color="accent" routerLink="/login" style="float: left;">Login</button>
+      </div>
+  
+    </form>
+  </mat-card>

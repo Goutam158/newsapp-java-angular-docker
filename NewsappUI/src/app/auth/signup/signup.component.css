@@ -1,0 +1,10 @@
+.signup-container{
+    width:50%; 
+    margin:auto;
+  }
+  
+  .signup-form{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+  }

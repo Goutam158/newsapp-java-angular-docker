@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+ 
+a:hover, a:active{
+    color: lightgray;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+mat-toolbar{
+    border-radius: 3px;
+}
+
+.right-align.profile-nav {
+    position: absolute;
+    right: 15px;
+}
+.right-align.profile-nav ul li {
+    display: inline-block;
+}
+.username {
+    color:#1976D2;
+    font-weight: 100;
+}
+.divider {
+    padding: 0 10px;
+}
+ 
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}

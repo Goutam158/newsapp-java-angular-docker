@@ -1,0 +1,22 @@
+
+<mat-card class="login-container">
+    <form class="login-form" [formGroup]="loginForm">
+        
+        <h1 class="mat-h1" id="text-h1-login">Login</h1>
+        <h3 id="text-h3-error-message" class="mat-h3" style="color:red;">{{errorMessage}}</h3>
+    
+        <mat-form-field style="padding:5px;">
+          <input id="#userId-field" matInput placeholder="User Id" name="userId" formControlName="userId" (keypress)="onKeyPress()">
+        </mat-form-field>
+    
+        <mat-form-field style="padding:5px;">
+          <input id="#password-field" matInput type="password" placeholder="Password" name="loginPassword"  (keypress)="onKeyPress()" formControlName="password">
+        </mat-form-field>
+        <div>
+            <button id="#btn-login" mat-raised-button color="primary" (click)="validateUser()" style="float: right;">Login</button>
+            <button id="#btn-clear" mat-raised-button  (click)="clear()" style="float: right; margin-right:5px;">Clear</button>
+            <button id="#btn-goto-signup" mat-raised-button color="accent" routerLink="/signup" style="float: left;">Signup</button>
+        </div>
+    
+      </form>
+    </mat-card>

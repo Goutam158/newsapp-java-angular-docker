@@ -1,0 +1,13 @@
+{
+  "name": "newsapp_container",
+  "version":"1.0.0",
+   "description":"This file add the express dependency for server.js file to host angular application.",
+  "scripts": {
+    "test":"echo \"Error: no test Specified\" && exit 1",
+    "start": "node server.js" 
+  },
+  
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

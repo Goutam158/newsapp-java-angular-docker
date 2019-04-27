@@ -1,0 +1,42 @@
+version: "3"
+services:
+    mysql:
+      image: mysql:5.5
+      ports: 
+       - 3306:3306
+      container_name: mysql-docker
+      network_mode: host
+      environment: 
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: newsdb
+        MYSQL_USER: app_root
+        MYSQL_PASSWORD: root123
+        
+    userauth-api: 
+      image: goutamd/newsapp:userauth-api-image
+      container_name: userauth-api-container
+      network_mode: host
+      depends_on: 
+       - mysql
+      ports: 
+        - 9090:9090
+    
+    favourite-service-api:
+      image: goutamd/newsapp:favourite-service-api-image
+      container_name: favourite-service-api-container
+      network_mode: host
+      depends_on: 
+       - mysql
+      ports: 
+        - 9040:9040
+        
+    newsapp-frontend:
+      image: goutamd/newsapp:newsapp-frontend-image
+      container_name: newsapp_frontend_container
+      network_mode: host
+      ports: 
+        - 4200:4200
+
+      
+         
+  

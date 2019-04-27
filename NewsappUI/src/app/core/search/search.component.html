@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-dashboard ></app-dashboard>
+
+
+<div class="container">
+<div class="search-box">
+  <input id="#search-text" class="form-control" type="text" name="search" [(ngModel)]="searchText" (blur)="getNews()"(keydown.enter)="getNews()" autocomplete="off" placeholder="&#61442;  Start searching for your fav topics">
+</div>
+</div>
+  <mat-divider></mat-divider>
+  <div *ngIf="articles.length>0">
+  <h2 style="color:cornflowerblue" class="align-center">Browse the latest news on your searched topic : : {{searchText}}</h2>
+  <div class="flexcontainer">
+  <div class="custom-card"*ngFor="let article of articles">
+  <mat-card id="#article-card" class="card">
+    <mat-card-header>
+      <mat-card-title class="truncate">{{article.title}}</mat-card-title>
+    </mat-card-header>
+    <div class="image-container">
+      <img mat-card-image src= '{{article.urlToImage}}' class="mat-card-image">
+    </div>
+      <mat-card-content class="mat-card-content truncate">{{article.description}}</mat-card-content>
+      <mat-card-actions class="mat-card-actions">
+      <div *ngIf="article.isAdded!='true'">
+        <button id="#article-button" mat-raised-button color="primary" (click) = "addToFavourite(article)"><i class="fa fa-plus"></i>Add to Wishlist</button>
+        </div>
+        <div *ngIf="article.isAdded==='true'">
+            <button mat-raised-button color="secondary" disabled><i class="fa fa-minus"></i>Added</button>
+            </div>
+          </mat-card-actions>
+  </mat-card>
+  </div>
+</div>
+</div>
+
+  
+
+    

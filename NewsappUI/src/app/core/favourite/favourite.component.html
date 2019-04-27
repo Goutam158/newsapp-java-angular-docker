@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-dashboard></app-dashboard>
+<div *ngIf='articles.length>0' class="align-center">
+  <h2 style="color:green">Here are the list of your added topics : : </h2>
+  <mat-divider></mat-divider>
+  <div class="flexcontainer">
+    <div class="custom-card" *ngFor="let article of articles">
+      <mat-card id ="#article-card"class="card">
+        <mat-card-header>
+          <mat-card-title class="truncate-title">{{article.title}}</mat-card-title>
+        </mat-card-header>
+        <div class="image-container">
+          <img mat-card-image src='{{article.urlToImage}}' class="mat-card-image">
+        </div>
+        <mat-card-content class="mat-card-content truncate-description">{{article.description}}</mat-card-content>
+        <mat-card-actions class="mat-card-actions">
+          <button mat-raised-button color="primary" (click)="deleteArticleConfirm(article)">
+            <i class="fa fa-trash"></i>delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div *ngIf='articles.length===0' class="align-center">
+  <img src="../../../assets/no_data.png"/>
+</div>
